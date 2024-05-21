@@ -1,12 +1,47 @@
-<script setup lang="ts">
+<script setup lang="js">
 import { useToggle } from '@vueuse/core'
+import { onMounted, ref } from 'vue'
 import 'uno.css'
 
 const [show, toggle] = useToggle(false)
+const bookList = ref([])
+
+onMounted(() => {
+  const ele = document.getElementsByClassName('shelf_list')
+  if (!ele)
+    return
+
+  document.getElementById('app').style.display = 'none'
+
+  // 找到ele中所有a标签
+  const shelfEle = ele[0]
+  const aList = shelfEle.getElementsByTagName('a')
+  for (let i = 0; i < aList.length; i++) {
+    const a = aList[i]
+    // 获取图片的src
+    const imgSrc = a.querySelector('.wr_bookCover_img').src
+    // 获取标题
+    const title = a.querySelector('.title').textContent
+    const href = a.href
+    bookList.value.push(
+      {
+        href,
+        img: imgSrc,
+        title,
+      },
+    )
+  }
+})
 </script>
 
 <template>
-  <div class="fixed right-0 bottom-0 m-5 z-100 flex items-end font-sans select-none leading-1em">
+  <div class="fixed w-full h-full right-0 bottom-0 z-100 flex items-end font-sans leading-1em">
+    <div class="shelf-container">
+      <div v-for="item in bookList" :key="item.href" class="text-black">
+        {{ item }}
+      </div>
+    </div>
+
     <div
       class="bg-white text-gray-800 rounded-lg shadow w-max h-min"
       p="x-4 y-2"
@@ -15,7 +50,7 @@ const [show, toggle] = useToggle(false)
       :class="show ? 'opacity-100' : 'opacity-0'"
     >
       <h1 class="text-lg">
-        Vitesse WebExt
+        我自己的页面
       </h1>
       <SharedSubtitle />
     </div>

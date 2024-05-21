@@ -43,7 +43,7 @@ export async function getManifest() {
     content_scripts: [
       {
         matches: [
-          '<all_urls>',
+          '*://weread.qq.com/*',
         ],
         js: [
           'dist/contentScripts/index.global.js',

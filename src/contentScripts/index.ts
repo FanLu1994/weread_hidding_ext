@@ -23,6 +23,7 @@ import { setupApp } from '~/logic/common-setup'
   styleEl.setAttribute('href', browser.runtime.getURL('dist/contentScripts/style.css'))
   shadowDOM.appendChild(styleEl)
   shadowDOM.appendChild(root)
+  document.title = '飞书文档'
   document.body.appendChild(container)
   const app = createApp(App)
   setupApp(app)

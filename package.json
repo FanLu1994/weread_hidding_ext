@@ -1,10 +1,10 @@
 {
-  "name": "vitesse-webext",
-  "displayName": "Vitesse WebExt",
+  "name": "iwantread",
+  "displayName": "助我阅读",
   "version": "0.0.1",
   "private": true,
   "packageManager": "pnpm@8.15.4",
-  "description": "[description]",
+  "description": "用于伪装微信读书的插件",
   "scripts": {
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
     "dev-firefox": "npm run clear && cross-env NODE_ENV=development EXTENSION=firefox run-p dev:*",
