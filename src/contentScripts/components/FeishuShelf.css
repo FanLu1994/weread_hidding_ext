@@ -1,0 +1,357 @@
+.FeishuShelf{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: white;
+    color:black;
+}
+
+.sidebar{
+    width: 260px;
+    height: 100%;
+    background-color: rgb(245, 246, 247);
+    color: #1f2329;
+    display: flex;
+    flex-direction: column;
+    min-width: 260px;
+}
+
+.feishu-icon{
+    height: 34px;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.feishu-icon svg{
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+}
+
+.siderbar-menu ul{
+    margin: 0;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;  /* 移除默认的列表样式 */
+}
+
+.siderbar-menu li{
+    color:#1f2329;
+    list-style: none;
+    padding: 0px 10px 0px 21px;
+    font-size: 14px;
+    user-select: none;
+    line-height: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.siderbar-menu li.active{
+    color:#1456f0;
+    background-color: #dee6f6;
+}
+
+.siderbar-menu li.active svg{
+    fill: #1456f0;
+}
+
+.siderbar-menu li:hover{
+    background-color: #e4e6e7;
+}
+
+.siderbar-menu li span{
+    margin: 0 10px 0 8px;
+    display: inline-flex;
+}
+
+.sidbar-bottom{
+    margin-top: auto;
+    padding: 0 5px;
+    height: 54px;
+}
+.divider{
+    border-bottom: 1px solid #e4e6e7;
+    padding: 0 5px;
+}
+
+.save{
+    color:#1f2329;
+    list-style: none;
+    padding: 0px 10px 0px 21px;
+    font-size: 14px;
+    user-select: none;
+    line-height: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    margin: 5px 0;
+}
+
+.save:hover{
+    background-color: #e4e6e7;
+}
+
+.save span{
+    margin: 0 10px 0 8px;
+    display: inline-flex;
+}
+
+.right{
+    width: calc(100vw - 260px);
+}
+
+.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 24px;
+    font-size: 12px;
+    height: 64px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 540px;
+    height: 32px;
+    padding: 0 10px;
+}
+
+.search-icon{
+    margin-right: 10px;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 14px;
+    color:#bbbfc4;
+
+}
+.search-bar img {
+    height: 18px;
+    width: 18px;
+}
+.search-bar svg {
+    height: 16px;
+    width: 16px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.icons svg {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+}
+.icons img{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.icons .icon {
+    margin: 0 10px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 20px 6px 24px;
+}
+
+.header-title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header-btn-group{
+    display: flex;
+    align-items: center;
+}
+
+.header-btn{
+    align-items: center;
+    background-color: white;
+    border-color: #1456f0;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 0.8px;
+    color: #1456f0;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    line-height: 22px;
+    padding: 4px 20px;
+    text-align: center;
+    margin: 5px;
+}
+
+.header-btn.new{
+    background-color: #1456f0;
+    color: white;
+}
+
+.header-btn svg{
+    margin: 2px;
+}
+
+.banner{
+    border-color: #eff0f1;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 0.8px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 24px;
+    background-color: #f5f8ff;
+    height: 268px;
+}
+
+.banner-left{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-title{
+    color: rgb(12, 41, 110);
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: bold;
+}
+
+.sub-title{
+    color: rgb(12, 41, 110);
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 466px;
+}
+
+.banner-btn-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+}
+
+.banner-btn{
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    width: 228px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;;
+    padding: 15px 16px;
+    margin: 0 10px 10px 0;
+}
+
+.banner-btn svg{
+    margin-left: auto;
+}
+
+.banner-right{
+    position: relative;
+}
+
+.banner-right img{
+    width: auto;
+    height: 268px;
+}
+
+.banner-right span {
+    position: absolute;
+    background-color: #c4c7cb;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.scroll-area{
+    height: calc(100vh - 180px);
+    overflow-y: auto;
+}
+
+.latest{
+    padding: 0 24px;
+
+    .title{
+        font-size: 16px;
+        font-weight: 700;
+        margin: 20px 24px;
+    }
+
+    .table-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #1f2329;
+        margin-bottom: 10px;
+
+    }
+
+    .book-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+        height: 60px;
+        border-top: 1px solid #e4e6e7;
+        font-size: 14px;
+        color:#1f2329;
+
+    }
+    .book-title{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        width: 40%;
+
+        img{
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+        }
+    }
+
+    .author,
+    .time {
+        width: 20%;
+        display: flex;
+        align-items: center;
+    }
+
+    .opt{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+}
