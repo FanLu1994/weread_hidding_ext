@@ -7,6 +7,10 @@ defineProps({
     },
   },
 })
+
+function jump(url) {
+  window.open(url, '_blank')
+}
 </script>
 
 <template>
@@ -170,7 +174,7 @@ defineProps({
           </div>
 
           <div v-for="item in bookList" :key="item.title" class="book-item">
-            <div class="book-title">
+            <div class="book-title" @click="jump(item.href)">
               <img :src="item.img">
               {{ item.title }}
             </div>
