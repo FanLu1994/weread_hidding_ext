@@ -1,15 +1,38 @@
 <script setup lang="js">
-defineProps({
-  bookList: {
-    type: Array,
-    default: () => {
-      return []
-    },
-  },
+import { onMounted, ref } from 'vue'
+
+const bookList = ref([])
+
+onMounted(() => {
+  const ele = document.getElementsByClassName('shelf_list')
+  if (!ele)
+    return
+
+  document.getElementById('app').style.display = 'none'
+
+  // 找到ele中所有a标签
+  const shelfEle = ele[0]
+  const aList = shelfEle.getElementsByTagName('a')
+  for (let i = 0; i < aList.length; i++) {
+    const a = aList[i]
+    // 获取图片的src
+    const imgSrc = a.querySelector('.wr_bookCover_img').src
+    // 获取标题
+    const title = a.querySelector('.title').textContent
+    const href = a.href
+    bookList.value.push(
+      {
+        href,
+        img: imgSrc,
+        title,
+        author: '夏目',
+      },
+    )
+  }
 })
 
 function jump(url) {
-  window.open(url, '_blank')
+  window.open(url, '_self')
 }
 </script>
 
